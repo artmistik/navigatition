@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<script src="script.js"></script>
 		<title>Pelagin Kirill</title>
 	</head>
 	<body>
-		<nav class="navbar">
+		<nav class="navbar" id="navbar">
 			<div class="nav-logo">
 				<a href="index.html">
 					<svg
@@ -15,6 +16,7 @@
 						width="40"
 						height="40"
 						viewBox="0 0 24 24"
+						id="logo-svg"
 					>
 						<path
 							fill="none"
@@ -36,41 +38,14 @@
 				<a href="#">Register</a>
 			</div>
 		</nav>
-		<h1>Main page</h1>
-		<p>
-			<b>Programming is the process of designing, writing, testing, debugging, and maintaining computer programs<b\>
-		</p>
+		<div class="content">
+			<h1>Main page</h1>
+			<p>
+				<b
+					>Programming is the process of designing, writing, testing, debugging,
+					and maintaining computer programs</b
+				>
+			</p>
+		</div>
 	</body>
-	<script>// Получаем элементы h1 и p
-		const heading = document.querySelector('h1');
-		const paragraph = document.querySelector('p');
-		
-		// Получаем элемент навигационной панели
-		const navbar = document.querySelector('.navbar');
-		
-		// Добавляем слушатель события на перемещение мыши
-		window.addEventListener('mousemove', (e) => {
-			// Если мышка находится выше определенной координаты (например, 50px от верха), то показываем навигационную панель
-			if (e.clientY <= 50) {
-				navbar.style.transform = 'translateY(0)';
-				// Смещаем элементы h1 и p вниз, чтобы они не перекрывались навигационной панелью
-				heading.style.transform = 'translateY(45px)';
-				paragraph.style.transform = 'translateY(45px)';
-			} else {
-				// Иначе скрываем навигационную панель и возвращаем элементы h1 и p в исходное положение
-				navbar.style.transform = 'translateY(-100%)';
-				heading.style.transform = 'translateY(0)';
-				paragraph.style.transform = 'translateY(0)';
-			}
-		});
-		
-		// Добавляем слушатель события на загрузку страницы, чтобы убедиться, что начальное состояние соответствует положению навигационной панели
-		window.addEventListener('load', () => {
-			if (window.scrollY <= 50) {
-				navbar.style.transform = 'translateY(0)';
-				heading.style.transform = 'translateY(45px)';
-				paragraph.style.transform = 'translateY(45px)';
-			}
-		});
-		</script>
 </html>

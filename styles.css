@@ -1,74 +1,95 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Kanit', sans-serif;
-    background-color: #333;
+	margin: 0;
+	padding: 0;
+	font-family: 'Kanit', sans-serif;
+	background-color: #333;
 }
+
+.content {
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 100px;
+	width: 500px;
+}
+
 h1,
 p {
-	color: white;
-    text-align: center;
-    margin-left: 520px;
-    width: 500px;
-    transition: transform 0.4s ease-in-out;
+	margin: 0;
 }
+
 .navbar {
-    background-color: #222;
-    height: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border-radius: 20px;
-    margin: 15px auto;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out; 
-    transform: translateY(-100%); 
+	background-color: #222;
+	height: 45px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	border-radius: 20px;
+	margin: 15px auto 5px;
+	position: fixed;
+	top: 0;
+	width: 98.5%;
+	z-index: 1000;
+	transform: translateY(-100%);
+	transition: transform 0.4s ease-in-out;
 }
 
 .nav-logo img {
-    height: 40px;
+	height: 40px;
 }
 
 .nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
 }
 
 .nav-list li {
-    margin-right: 20px;
+	margin-right: 20px;
 }
 
 .nav-list li:last-child {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 .nav-list li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 10px;
+	border-radius: 10px;
+	transition: background-color 0.3s;
 }
 
 .nav-buttons a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 10px;
+	transition: background-color 0.3s;
 }
 
 .nav-list li a:hover,
 .nav-buttons a:hover {
-    background-color: #555;
+	background-color: #555;
+}
+
+.navbar.active {
+	transform: translateY(0);
+}
+
+.navbar.active .nav-buttons a:last-child {
+	display: inline-block;
+}
+#logo-svg {
+	transition: transform 0.5s ease;
+}
+
+#logo-svg:hover {
+	transform: rotate(360deg);
 }
