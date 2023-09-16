@@ -1,51 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles.css" />
-		<script src="script.js"></script>
-		<title>Pelagin Kirill</title>
-	</head>
-	<body>
-		<nav class="navbar" id="navbar">
-			<div class="nav-logo">
-				<a href="index.html">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="40"
-						height="40"
-						viewBox="0 0 24 24"
-						id="logo-svg"
-					>
-						<path
-							fill="none"
-							stroke="#fff"
-							stroke-width="2"
-							d="M12 2l2.4 7.1h7.6l-6 4.9 2.3 7.1-6-4.7-6 4.7 2.3-7.1-6-4.9h7.6z"
-						/>
-					</svg>
-				</a>
-			</div>
-			<ul class="nav-list">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About us</a></li>
-				<li><a href="services.html">Services</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-			<div class="nav-buttons">
-				<a href="#">Login</a>
-				<a href="#">Register</a>
-			</div>
-		</nav>
-		<div class="content">
-			<h1>Main page</h1>
-			<p>
-				<b
-					>Programming is the process of designing, writing, testing, debugging,
-					and maintaining computer programs</b
-				>
-			</p>
-		</div>
-	</body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Pelagin Kirill</title>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" id="logo-svg">
+                    <path fill="none" stroke="#fff" stroke-width="2" d="M12 2l2.4 7.1h7.6l-6 4.9 2.3 7.1-6-4.7-6 4.7 2.3-7.1-6-4.9h7.6z"/>
+                </svg>
+            </a>
+        </div>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#"  id="registerButton">Login</a>
+            <a href="#" id="lButton">Register</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="forms">
+            <div class="form login hidden" id="registrationForm">
+                <span class="title">Login</span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+                    <div class="input-field button">
+                        <input type="button" value="Login">
+                    </div>
+                </form>
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
+            <div class="form signup hidden">
+                <span class="title">Registration</span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                        </div>
+                    </div>
+                    <div class="input-field button">
+                        <input type="button" value="Signup">
+                    </div>
+                </form>
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector(".container");
+            container.style.display = "block";
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const registrationForm = document.getElementById("registrationForm");
+            const registerButton = document.getElementById("registerButton");
+
+            registerButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                registrationForm.classList.remove("hidden");
+                setTimeout(() => {
+                    registrationForm.classList.add("active");
+                }, 10);
+            });
+        });
+    </script>
+</body>
 </html>
